@@ -88,7 +88,7 @@ var cards = (function () {
 			//##ADD if not a standard deck
 			if (opt.type == TAROT_MA) {
 				for (var i = start; i <= end; i++) {
-					all.push(new Card('h', i, opt.table));
+					all.push(new Card('tma', i, opt.table));
 				}
 			}
 		}
@@ -305,6 +305,16 @@ var cards = (function () {
 
 		toString: function () {
 			return 'Container';
+		},
+
+		findCard: function(name){
+			console.log("find card (name): "+name);
+			for (var i = 0; i < this.length; i++) {
+				console.log(this[i].shortName);
+				//if card matches the criteria
+				if(this[i].shortName==name)
+					return this[i];
+			}
 		}
 	});
 

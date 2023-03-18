@@ -24,6 +24,8 @@ largehand = new cards.Hand({faceUp:true,  y:500});
 discardPile = new cards.Deck({faceUp:true});
 discardPile.x += 100;
 
+discardPile.addCard(deck.findCard('tma1'));
+discardPile.addCard(deck.findCard('tma10'));
 
 //Let's deal when the Deal button is pressed:
 $('#deal').click(function() {
@@ -58,7 +60,7 @@ largehand.click(function(card){
 //		|| card.rank == discardPile.topCard().rank) {
 		discardPile.addCard(card);
 		discardPile.render();
-		lowerhand.render();
+		largehand.render();
 //	}
 });
 
